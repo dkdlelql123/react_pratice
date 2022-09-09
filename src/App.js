@@ -1,23 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+import { useEffect, useState } from 'react';
+
+function App() {  
+  const [member, setMember] = useState(localStorage.member);
+  const [logined, setLogined] =useState(member?.id ? true : false); 
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {logined == true
+        ? <div>로그인 상태입니다.</div>
+        : <div>로그인해주세요</div>
+      }
     </div>
   );
 }
