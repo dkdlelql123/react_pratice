@@ -1,4 +1,9 @@
 function Login() {
+  // 로그인 폼 체크
+  // 로그인 ajax
+  // 로컬스토리지 멤버 등록 - setMember
+  // 로그인 상태 변경 - setLogined
+
   return (
     <div>
       <form>
@@ -9,3 +14,5 @@ function Login() {
     </div>
   );
 }
+
+export default Login;

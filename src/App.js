@@ -1,19 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'; 
+import Index  from './feature/Index';
+import { QueryClient, QueryClientProvider } from "react-query";
 
-import { useEffect, useState } from 'react';
+const queryClient = new QueryClient();
 
-function App() {  
-  const [member, setMember] = useState(localStorage.member);
-  const [logined, setLogined] =useState(member?.id ? true : false); 
- 
+function App() {    
+  
   return (
+    <QueryClientProvider client={queryClient}>
     <div className="App">
-      {logined == true
-        ? <div>로그인 상태입니다.</div>
-        : <div>로그인해주세요</div>
-      }
+      <Index/>
     </div>
+    </QueryClientProvider>
   );
 }
 
